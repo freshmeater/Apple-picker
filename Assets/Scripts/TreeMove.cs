@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class TreeMove : MonoBehaviour
 {
-    private Transform Position;
+    private Transform position;
 
-    private float Speed = 2f;
-    private float ChanceOfChangingDirection = 0.005f;
-    private float Edges = 10f;
+    private float speed = 2f;
+    private float chanceOfChangingDirection = 0.005f;
+    private float edges = 10f;
     
     void Start()
     {
-        Position = GetComponent<Transform>();
+        position = GetComponent<Transform>();
     }
 
     
@@ -24,20 +24,20 @@ public class TreeMove : MonoBehaviour
 
     private void Move()
     {
-        Vector3 pos = Position.position;
-        pos.x += Speed * Time.deltaTime;
-        Position.position = pos;
+        Vector3 pos = position.position;
+        pos.x += speed * Time.deltaTime;
+        position.position = pos;
     }
 
     private void TryChangeDirection()
     {
-        if (IsDiretionChanging()) Speed *= -1;
+        if (IsDiretionChanging()) speed *= -1;
     }
 
     private bool IsDiretionChanging() => !IsTreeInBorders() || RollChangeDirection();
 
-    private bool IsTreeInBorders() => Mathf.Abs(Position.position.x) < Edges;
+    private bool IsTreeInBorders() => Mathf.Abs(position.position.x) < edges;
 
-    private bool RollChangeDirection() => Random.value < ChanceOfChangingDirection;
+    private bool RollChangeDirection() => Random.value < chanceOfChangingDirection;
 
 }
