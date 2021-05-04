@@ -1,0 +1,3 @@
+TreeSpeed 2
+RateOfDroppingApples 2
+NumOfBaskets 1
