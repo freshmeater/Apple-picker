@@ -9,7 +9,8 @@ public class Parser : MonoBehaviour
     public Dictionary<string,float> parameters;
     void Start()
     {
-        using (StreamReader sr = new StreamReader("Params.txt"))
+        parameters = new Dictionary<string, float>();
+        using (StreamReader sr = new StreamReader(@"Assets\Files\Params.txt"))
         {
             string line;
             while ((line = sr.ReadLine()) != null)

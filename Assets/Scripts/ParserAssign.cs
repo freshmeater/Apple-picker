@@ -6,6 +6,6 @@ public class ParserAssign : MonoBehaviour
 {
     public void Assign()
     {
-
+        
     }
 }
